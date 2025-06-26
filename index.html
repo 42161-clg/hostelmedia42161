@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Media Vault</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="login-section">
+    <h2>Enter Access Code</h2>
+    <input type="password" id="access-code" placeholder="Enter secret code" />
+    <button onclick="checkAccess()">Enter</button>
+    <p id="error-msg"></p>
+  </div>
+
+  <div id="gallery-section" style="display:none;">
+    <h1 onclick="resetView()" style="cursor:pointer;">📂 Media Gallery</h1>
+
+
+    <!-- Folder Buttons -->
+    <div class="folders">
+      <button onclick="showFolder('images')">🖼️ IMAGES</button>
+      <button onclick="showFolder('videos')">🎞️ VIDEOUS</button>
+    </div>
+
+    <!-- Image Folder Section -->
+    <div id="images" class="folder-content">
+      <h2>🖼️ Image Gallery</h2>
+      <div class="gallery">
+        <!-- Example Image -->
+        <div class="media-item">
+          <img src="https://drive.google.com/uc?id=YOUR_IMAGE_ID" alt="Image 1">
+          <a href="https://drive.google.com/uc?export=download&id=YOUR_IMAGE_ID" download>Download</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Video Folder Section -->
+    <div id="videos" class="folder-content" style="display:none;">
+      <h2>🎞️ Video Gallery</h2>
+      <div class="gallery">
+        <!-- Example Video -->
+        <div class="media-item">
+          <iframe src="https://drive.google.com/file/d/YOUR_VIDEO_ID/preview" allow="autoplay"></iframe>
+          <a href="https://drive.google.com/uc?export=download&id=YOUR_VIDEO_ID" download>Download</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
