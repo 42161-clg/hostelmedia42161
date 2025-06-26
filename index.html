@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <!-- Login Section -->
   <div id="login-section">
     <h2>Enter Access Code</h2>
     <input type="password" id="access-code" placeholder="Enter secret code" />
@@ -14,375 +15,77 @@
     <p id="error-msg"></p>
   </div>
 
+  <!-- Gallery Section -->
   <div id="gallery-section" style="display:none;">
     <h1 onclick="resetView()" style="cursor:pointer;">📂 Media Gallery</h1>
 
-
-    <!-- Folder Buttons -->
+    <!-- Top-Level Folder Buttons -->
     <div class="folders">
       <button onclick="showFolder('images')">🖼️ IMAGES</button>
       <button onclick="showFolder('videos')">🎞️ VIDEOUS</button>
     </div>
 
-    <!-- Image Folder Section -->
-    <div id="images" class="folder-content">
+    <!-- IMAGES Folder -->
+    <div id="images" class="folder-content" style="display:none;">
       <h2>🖼️ Image Gallery</h2>
-      <div class="gallery">
-        <!-- Example Image -->
+
+      <!-- Subfolders for Images -->
+      <div class="subfolders">
+        <button onclick="showSubfolder('image-folder-1', 'images')">📁 Nature</button>
+        <button onclick="showSubfolder('image-folder-2', 'images')">📁 Travel</button>
+        <button onclick="showSubfolder('image-folder-3', 'images')">📁 Events</button>
+      </div>
+
+      <!-- Nature Images -->
+      <div id="image-folder-1" class="gallery subfolder" style="display: none;">
         <div class="media-item">
-          <iframe 
-                src="https://drive.google.com/file/d/1X3JdT6spFAbOvGmwzNCLQG3hsuw1MLVA/preview" 
-                width="100%" 
-                height="300" 
-                frameborder="0" 
-                allowfullscreen>
-          </iframe>
-
-          <a href="https://drive.google.com/uc?export=download&id=1X3JdT6spFAbOvGmwzNCLQG3hsuw1MLVA" download>Download</a>
+          <iframe src="https://drive.google.com/file/d/FILE_ID/preview" width="100%" height="300" frameborder="0" allowfullscreen></iframe>
+          <a href="https://drive.google.com/uc?export=download&id=FILE_ID" download>Download</a>
         </div>
-        <div class="media-item">
-          <iframe 
-                src="https://drive.google.com/file/d/1X3JdT6spFAbOvGmwzNCLQG3hsuw1MLVA/preview" 
-                width="100%" 
-                height="300" 
-                frameborder="0" 
-                allowfullscreen>
-          </iframe>
+      </div>
 
-          <a href="https://drive.google.com/uc?export=download&id=1X3JdT6spFAbOvGmwzNCLQG3hsuw1MLVA" download>Download</a>
-        </div>
-        <div class="media-item">
-          <iframe 
-                src="https://drive.google.com/file/d/1X3JdT6spFAbOvGmwzNCLQG3hsuw1MLVA/preview" 
-                width="100%" 
-                height="300" 
-                frameborder="0" 
-                allowfullscreen>
-          </iframe>
+      <!-- Travel Images -->
+      <div id="image-folder-2" class="gallery subfolder" style="display: none;">
+        <!-- Add more image items -->
+      </div>
 
-          <a href="https://drive.google.com/uc?export=download&id=1X3JdT6spFAbOvGmwzNCLQG3hsuw1MLVA" download>Download</a>
-        </div>
-        <div class="media-item">
-          <iframe 
-                src="https://drive.google.com/file/d/1X3JdT6spFAbOvGmwzNCLQG3hsuw1MLVA/preview" 
-                width="100%" 
-                height="300" 
-                frameborder="0" 
-                allowfullscreen>
-          </iframe>
-
-          <a href="https://drive.google.com/uc?export=download&id=1X3JdT6spFAbOvGmwzNCLQG3hsuw1MLVA" download>Download</a>
-        </div>
-        <div class="media-item">
-          <iframe 
-                src="https://drive.google.com/file/d/1X3JdT6spFAbOvGmwzNCLQG3hsuw1MLVA/preview" 
-                width="100%" 
-                height="300" 
-                frameborder="0" 
-                allowfullscreen>
-          </iframe>
-
-          <a href="https://drive.google.com/uc?export=download&id=1X3JdT6spFAbOvGmwzNCLQG3hsuw1MLVA" download>Download</a>
-        </div>
-         <div class="media-item">
-          <iframe 
-                src="https://drive.google.com/file/d/1X3JdT6spFAbOvGmwzNCLQG3hsuw1MLVA/preview" 
-                width="100%" 
-                height="300" 
-                frameborder="0" 
-                allowfullscreen>
-          </iframe>
-
-          <a href="https://drive.google.com/uc?export=download&id=1X3JdT6spFAbOvGmwzNCLQG3hsuw1MLVA" download>Download</a>
-        </div>
-         <div class="media-item">
-          <iframe 
-                src="https://drive.google.com/file/d/1X3JdT6spFAbOvGmwzNCLQG3hsuw1MLVA/preview" 
-                width="100%" 
-                height="300" 
-                frameborder="0" 
-                allowfullscreen>
-          </iframe>
-
-          <a href="https://drive.google.com/uc?export=download&id=1X3JdT6spFAbOvGmwzNCLQG3hsuw1MLVA" download>Download</a>
-        </div>
-         <div class="media-item">
-          <iframe 
-                src="https://drive.google.com/file/d/1X3JdT6spFAbOvGmwzNCLQG3hsuw1MLVA/preview" 
-                width="100%" 
-                height="300" 
-                frameborder="0" 
-                allowfullscreen>
-          </iframe>
-
-          <a href="https://drive.google.com/uc?export=download&id=1X3JdT6spFAbOvGmwzNCLQG3hsuw1MLVA" download>Download</a>
-        </div>
-         <div class="media-item">
-          <iframe 
-                src="https://drive.google.com/file/d/1X3JdT6spFAbOvGmwzNCLQG3hsuw1MLVA/preview" 
-                width="100%" 
-                height="300" 
-                frameborder="0" 
-                allowfullscreen>
-          </iframe>
-
-          <a href="https://drive.google.com/uc?export=download&id=1X3JdT6spFAbOvGmwzNCLQG3hsuw1MLVA" download>Download</a>
-        </div>
-         <div class="media-item">
-          <iframe 
-                src="https://drive.google.com/file/d/1X3JdT6spFAbOvGmwzNCLQG3hsuw1MLVA/preview" 
-                width="100%" 
-                height="300" 
-                frameborder="0" 
-                allowfullscreen>
-          </iframe>
-
-          <a href="https://drive.google.com/uc?export=download&id=1X3JdT6spFAbOvGmwzNCLQG3hsuw1MLVA" download>Download</a>
-        </div>
-         <div class="media-item">
-          <iframe 
-                src="https://drive.google.com/file/d/1X3JdT6spFAbOvGmwzNCLQG3hsuw1MLVA/preview" 
-                width="100%" 
-                height="300" 
-                frameborder="0" 
-                allowfullscreen>
-          </iframe>
-
-          <a href="https://drive.google.com/uc?export=download&id=1X3JdT6spFAbOvGmwzNCLQG3hsuw1MLVA" download>Download</a>
-        </div>
-         <div class="media-item">
-          <iframe 
-                src="https://drive.google.com/file/d/1X3JdT6spFAbOvGmwzNCLQG3hsuw1MLVA/preview" 
-                width="100%" 
-                height="300" 
-                frameborder="0" 
-                allowfullscreen>
-          </iframe>
-
-          <a href="https://drive.google.com/uc?export=download&id=1X3JdT6spFAbOvGmwzNCLQG3hsuw1MLVA" download>Download</a>
-        </div>
-         <div class="media-item">
-          <iframe 
-                src="https://drive.google.com/file/d/1X3JdT6spFAbOvGmwzNCLQG3hsuw1MLVA/preview" 
-                width="100%" 
-                height="300" 
-                frameborder="0" 
-                allowfullscreen>
-          </iframe>
-
-          <a href="https://drive.google.com/uc?export=download&id=1X3JdT6spFAbOvGmwzNCLQG3hsuw1MLVA" download>Download</a>
-        </div>
-         <div class="media-item">
-          <iframe 
-                src="https://drive.google.com/file/d/1X3JdT6spFAbOvGmwzNCLQG3hsuw1MLVA/preview" 
-                width="100%" 
-                height="300" 
-                frameborder="0" 
-                allowfullscreen>
-          </iframe>
-
-          <a href="https://drive.google.com/uc?export=download&id=1X3JdT6spFAbOvGmwzNCLQG3hsuw1MLVA" download>Download</a>
-        </div>
-         <div class="media-item">
-          <iframe 
-                src="https://drive.google.com/file/d/1X3JdT6spFAbOvGmwzNCLQG3hsuw1MLVA/preview" 
-                width="100%" 
-                height="300" 
-                frameborder="0" 
-                allowfullscreen>
-          </iframe>
-
-          <a href="https://drive.google.com/uc?export=download&id=1X3JdT6spFAbOvGmwzNCLQG3hsuw1MLVA" download>Download</a>
-        </div>
-         <div class="media-item">
-          <iframe 
-                src="https://drive.google.com/file/d/1X3JdT6spFAbOvGmwzNCLQG3hsuw1MLVA/preview" 
-                width="100%" 
-                height="300" 
-                frameborder="0" 
-                allowfullscreen>
-          </iframe>
-
-          <a href="https://drive.google.com/uc?export=download&id=1X3JdT6spFAbOvGmwzNCLQG3hsuw1MLVA" download>Download</a>
-        </div>
-         <div class="media-item">
-          <iframe 
-                src="https://drive.google.com/file/d/1X3JdT6spFAbOvGmwzNCLQG3hsuw1MLVA/preview" 
-                width="100%" 
-                height="300" 
-                frameborder="0" 
-                allowfullscreen>
-          </iframe>
-
-          <a href="https://drive.google.com/uc?export=download&id=1X3JdT6spFAbOvGmwzNCLQG3hsuw1MLVA" download>Download</a>
-        </div>
-         <div class="media-item">
-          <iframe 
-                src="https://drive.google.com/file/d/1X3JdT6spFAbOvGmwzNCLQG3hsuw1MLVA/preview" 
-                width="100%" 
-                height="300" 
-                frameborder="0" 
-                allowfullscreen>
-          </iframe>
-
-          <a href="https://drive.google.com/uc?export=download&id=1X3JdT6spFAbOvGmwzNCLQG3hsuw1MLVA" download>Download</a>
-        </div>
-         <div class="media-item">
-          <iframe 
-                src="https://drive.google.com/file/d/1X3JdT6spFAbOvGmwzNCLQG3hsuw1MLVA/preview" 
-                width="100%" 
-                height="300" 
-                frameborder="0" 
-                allowfullscreen>
-          </iframe>
-
-          <a href="https://drive.google.com/uc?export=download&id=1X3JdT6spFAbOvGmwzNCLQG3hsuw1MLVA" download>Download</a>
-        </div>
-         <div class="media-item">
-          <iframe 
-                src="https://drive.google.com/file/d/1X3JdT6spFAbOvGmwzNCLQG3hsuw1MLVA/preview" 
-                width="100%" 
-                height="300" 
-                frameborder="0" 
-                allowfullscreen>
-          </iframe>
-
-          <a href="https://drive.google.com/uc?export=download&id=1X3JdT6spFAbOvGmwzNCLQG3hsuw1MLVA" download>Download</a>
-        </div>
-         <div class="media-item">
-          <iframe 
-                src="https://drive.google.com/file/d/1X3JdT6spFAbOvGmwzNCLQG3hsuw1MLVA/preview" 
-                width="100%" 
-                height="300" 
-                frameborder="0" 
-                allowfullscreen>
-          </iframe>
-
-          <a href="https://drive.google.com/uc?export=download&id=1X3JdT6spFAbOvGmwzNCLQG3hsuw1MLVA" download>Download</a>
-        </div>
-         <div class="media-item">
-          <iframe 
-                src="https://drive.google.com/file/d/1X3JdT6spFAbOvGmwzNCLQG3hsuw1MLVA/preview" 
-                width="100%" 
-                height="300" 
-                frameborder="0" 
-                allowfullscreen>
-          </iframe>
-
-          <a href="https://drive.google.com/uc?export=download&id=1X3JdT6spFAbOvGmwzNCLQG3hsuw1MLVA" download>Download</a>
-        </div>
-         <div class="media-item">
-          <iframe 
-                src="https://drive.google.com/file/d/1X3JdT6spFAbOvGmwzNCLQG3hsuw1MLVA/preview" 
-                width="100%" 
-                height="300" 
-                frameborder="0" 
-                allowfullscreen>
-          </iframe>
-
-          <a href="https://drive.google.com/uc?export=download&id=1X3JdT6spFAbOvGmwzNCLQG3hsuw1MLVA" download>Download</a>
-        </div>
-         <div class="media-item">
-          <iframe 
-                src="https://drive.google.com/file/d/1X3JdT6spFAbOvGmwzNCLQG3hsuw1MLVA/preview" 
-                width="100%" 
-                height="300" 
-                frameborder="0" 
-                allowfullscreen>
-          </iframe>
-
-          <a href="https://drive.google.com/uc?export=download&id=1X3JdT6spFAbOvGmwzNCLQG3hsuw1MLVA" download>Download</a>
-        </div>
-         <div class="media-item">
-          <iframe 
-                src="https://drive.google.com/file/d/1X3JdT6spFAbOvGmwzNCLQG3hsuw1MLVA/preview" 
-                width="100%" 
-                height="300" 
-                frameborder="0" 
-                allowfullscreen>
-          </iframe>
-
-          <a href="https://drive.google.com/uc?export=download&id=1X3JdT6spFAbOvGmwzNCLQG3hsuw1MLVA" download>Download</a>
-        </div>
-         <div class="media-item">
-          <iframe 
-                src="https://drive.google.com/file/d/1X3JdT6spFAbOvGmwzNCLQG3hsuw1MLVA/preview" 
-                width="100%" 
-                height="300" 
-                frameborder="0" 
-                allowfullscreen>
-          </iframe>
-
-          <a href="https://drive.google.com/uc?export=download&id=1X3JdT6spFAbOvGmwzNCLQG3hsuw1MLVA" download>Download</a>
-        </div>
+      <!-- Events Images -->
+      <div id="image-folder-3" class="gallery subfolder" style="display: none;">
+        <!-- Add more image items -->
       </div>
     </div>
 
-    <!-- Video Folder Section -->
+    <!-- VIDEOS Folder -->
     <div id="videos" class="folder-content" style="display:none;">
       <h2>🎞️ Video Gallery</h2>
-      <div class="gallery">
-        <!-- Example Video -->
+
+      <!-- Subfolders for Videos -->
+      <div class="subfolders">
+        <button onclick="showSubfolder('video-folder-1', 'videos')">📁 Shorts</button>
+        <button onclick="showSubfolder('video-folder-2', 'videos')">📁 Travel Vlogs</button>
+        <button onclick="showSubfolder('video-folder-3', 'videos')">📁 Events</button>
+      </div>
+
+      <!-- Shorts Videos -->
+      <div id="video-folder-1" class="gallery subfolder" style="display: none;">
         <div class="media-item">
-          <iframe src="https://drive.google.com/file/d/1Cyu4m2i-7Siqbm8eCuqwvRgd2pQaRNjE/preview" allow="autoplay"></iframe>
-          <a href="https://drive.google.com/uc?export=download&id=1Cyu4m2i-7Siqbm8eCuqwvRgd2pQaRNjE" download>Download</a>
+          <iframe src="https://drive.google.com/file/d/1nvSFyJXmubBC09DueF_PCCSfktfkFVe8/preview" width="100%" height="300" frameborder="0" allowfullscreen allow="autoplay"></iframe>
+          <a href="https://drive.google.com/uc?export=download&id=1nvSFyJXmubBC09DueF_PCCSfktfkFVe8" download>Download</a>
         </div>
-        <div class="media-item">
-          <iframe src="https://drive.google.com/file/d/1Cyu4m2i-7Siqbm8eCuqwvRgd2pQaRNjE/preview" allow="autoplay"></iframe>
-          <a href="https://drive.google.com/uc?export=download&id=1Cyu4m2i-7Siqbm8eCuqwvRgd2pQaRNjE" download>Download</a>
+      </div>
+
+      <!-- Travel Vlogs -->
+      <div id="video-folder-2" class="gallery subfolder" style="display: none;">
+        <!-- Add more video items -->
+         <div class="media-item">
+          <iframe src="https://drive.google.com/file/d/FILE_ID/preview" width="100%" height="300" frameborder="0" allowfullscreen allow="autoplay"></iframe>
+          <a href="https://drive.google.com/uc?export=download&id=FILE_ID" download>Download</a>
         </div>
-        <div class="media-item">
-          <iframe src="https://drive.google.com/file/d/1Cyu4m2i-7Siqbm8eCuqwvRgd2pQaRNjE/preview" allow="autoplay"></iframe>
-          <a href="https://drive.google.com/uc?export=download&id=1Cyu4m2i-7Siqbm8eCuqwvRgd2pQaRNjE" download>Download</a>
-        </div>
-        <div class="media-item">
-          <iframe src="https://drive.google.com/file/d/1Cyu4m2i-7Siqbm8eCuqwvRgd2pQaRNjE/preview" allow="autoplay"></iframe>
-          <a href="https://drive.google.com/uc?export=download&id=1Cyu4m2i-7Siqbm8eCuqwvRgd2pQaRNjE" download>Download</a>
-        </div>
-        <div class="media-item">
-          <iframe src="https://drive.google.com/file/d/1Cyu4m2i-7Siqbm8eCuqwvRgd2pQaRNjE/preview" allow="autoplay"></iframe>
-          <a href="https://drive.google.com/uc?export=download&id=1Cyu4m2i-7Siqbm8eCuqwvRgd2pQaRNjE" download>Download</a>
-        </div>
-        <div class="media-item">
-          <iframe src="https://drive.google.com/file/d/1Cyu4m2i-7Siqbm8eCuqwvRgd2pQaRNjE/preview" allow="autoplay"></iframe>
-          <a href="https://drive.google.com/uc?export=download&id=1Cyu4m2i-7Siqbm8eCuqwvRgd2pQaRNjE" download>Download</a>
-        </div>
-        <div class="media-item">
-          <iframe src="https://drive.google.com/file/d/1Cyu4m2i-7Siqbm8eCuqwvRgd2pQaRNjE/preview" allow="autoplay"></iframe>
-          <a href="https://drive.google.com/uc?export=download&id=1Cyu4m2i-7Siqbm8eCuqwvRgd2pQaRNjE" download>Download</a>
-        </div>
-        <div class="media-item">
-          <iframe src="https://drive.google.com/file/d/1Cyu4m2i-7Siqbm8eCuqwvRgd2pQaRNjE/preview" allow="autoplay"></iframe>
-          <a href="https://drive.google.com/uc?export=download&id=1Cyu4m2i-7Siqbm8eCuqwvRgd2pQaRNjE" download>Download</a>
-        </div>
-        <div class="media-item">
-          <iframe src="https://drive.google.com/file/d/1Cyu4m2i-7Siqbm8eCuqwvRgd2pQaRNjE/preview" allow="autoplay"></iframe>
-          <a href="https://drive.google.com/uc?export=download&id=1Cyu4m2i-7Siqbm8eCuqwvRgd2pQaRNjE" download>Download</a>
-        </div>
-        <div class="media-item">
-          <iframe src="https://drive.google.com/file/d/1Cyu4m2i-7Siqbm8eCuqwvRgd2pQaRNjE/preview" allow="autoplay"></iframe>
-          <a href="https://drive.google.com/uc?export=download&id=1Cyu4m2i-7Siqbm8eCuqwvRgd2pQaRNjE" download>Download</a>
-        </div>
-        <div class="media-item">
-          <iframe src="https://drive.google.com/file/d/1Cyu4m2i-7Siqbm8eCuqwvRgd2pQaRNjE/preview" allow="autoplay"></iframe>
-          <a href="https://drive.google.com/uc?export=download&id=1Cyu4m2i-7Siqbm8eCuqwvRgd2pQaRNjE" download>Download</a>
-        </div>
-        <div class="media-item">
-          <iframe src="https://drive.google.com/file/d/1Cyu4m2i-7Siqbm8eCuqwvRgd2pQaRNjE/preview" allow="autoplay"></iframe>
-          <a href="https://drive.google.com/uc?export=download&id=1Cyu4m2i-7Siqbm8eCuqwvRgd2pQaRNjE" download>Download</a>
-        </div>
-        <div class="media-item">
-          <iframe src="https://drive.google.com/file/d/1Cyu4m2i-7Siqbm8eCuqwvRgd2pQaRNjE/preview" allow="autoplay"></iframe>
-          <a href="https://drive.google.com/uc?export=download&id=1Cyu4m2i-7Siqbm8eCuqwvRgd2pQaRNjE" download>Download</a>
-        </div>
-        <div class="media-item">
-          <iframe src="https://drive.google.com/file/d/1Cyu4m2i-7Siqbm8eCuqwvRgd2pQaRNjE/preview" allow="autoplay"></iframe>
-          <a href="https://drive.google.com/uc?export=download&id=1Cyu4m2i-7Siqbm8eCuqwvRgd2pQaRNjE" download>Download</a>
-        </div>
-        <div class="media-item">
-          <iframe src="https://drive.google.com/file/d/1Cyu4m2i-7Siqbm8eCuqwvRgd2pQaRNjE/preview" allow="autoplay"></iframe>
-          <a href="https://drive.google.com/uc?export=download&id=1Cyu4m2i-7Siqbm8eCuqwvRgd2pQaRNjE" download>Download</a>
-        </div>
+      </div>
+
+      <!-- Events Videos -->
+      <div id="video-folder-3" class="gallery subfolder" style="display: none;">
+        <!-- Add more video items -->
       </div>
     </div>
   </div>
