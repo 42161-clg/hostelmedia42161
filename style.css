@@ -94,9 +94,23 @@ body {
   width: 100%;
   border-radius: 8px;
 }
-@media (max-width: 600px) {
-  .gallery {
-    grid-template-columns: repeat(3, 1fr);
-  }
+#images .gallery {
+  display: grid;
+  grid-template-columns: repeat(11, 1fr); /* Show up to 11 images on desktop */
+  gap: 16px;
 }
 
+#videos .gallery {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr); /* 6 videos per row on desktop */
+  gap: 16px;
+}
+@media (max-width: 600px) {
+  #images .gallery {
+    grid-template-columns: repeat(3, 1fr); /* 3 images per row */
+  }
+
+  #videos .gallery {
+    grid-template-columns: 1fr; /* 1 video per row */
+  }
+}
