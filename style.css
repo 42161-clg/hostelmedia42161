@@ -38,24 +38,24 @@ body {
   }
   
   .gallery {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 30px;
-  }
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 16px;
+  margin-top: 20px;
+}
   
   .media-item {
-    background: #222;
-    padding: 15px;
-    border-radius: 10px;
-    width: 300px;
-  }
+  background: #222;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+  overflow: hidden;
+}
   
   .media-item iframe {
-    width: 100%;
-    height: 180px;
-    border: none;
+     width: 100%;
+  border-radius: 8px;
+  height: auto;
   }
   
   .media-item a {
