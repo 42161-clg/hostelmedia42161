@@ -31,13 +31,31 @@
 
       <!-- Subfolders for Images -->
       <div class="subfolders">
-        <button onclick="showSubfolder('image-folder-1', 'images')">📁 Nature</button>
+        <button onclick="showSubfolder('image-folder-1', 'images')">📁 GENDRAL</button>
         <button onclick="showSubfolder('image-folder-2', 'images')">📁 Travel</button>
         <button onclick="showSubfolder('image-folder-3', 'images')">📁 Events</button>
       </div>
 
-      <!-- Nature Images -->
+      <!-- GENDRAL Images -->
       <div id="image-folder-1" class="gallery subfolder" style="display: none;">
+        <div class="subfolders">
+          <button onclick="showNestedFolder('nature-forest')">📁 Forest</button>
+          <button onclick="showNestedFolder('nature-mountains')">📁 Mountains</button>
+        </div>
+
+        <!-- Forest Images -->
+        <div id="nature-forest" class="gallery nested-folder" style="display: none;">
+          <div class="media-item">
+            <iframe src="https://drive.google.com/file/d/FILE_ID/preview" width="100%" height="300" frameborder="0" allowfullscreen></iframe>
+            <a href="https://drive.google.com/uc?export=download&id=FILE_ID" download>Download</a>
+          </div>
+        </div>
+
+        <!-- Mountains Images -->
+        <div id="nature-mountains" class="gallery nested-folder" style="display: none;">
+          <!-- Add mountain images -->
+        </div>
+      </div>
         <div class="media-item">
           <iframe src="https://drive.google.com/file/d/FILE_ID/preview" width="100%" height="300" frameborder="0" allowfullscreen></iframe>
           <a href="https://drive.google.com/uc?export=download&id=FILE_ID" download>Download</a>
