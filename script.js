@@ -96,54 +96,7 @@ allNestedFolders.forEach(folder => folder.style.display = "none");
 //   });
 // }
 //);
-// Lightbox functionality
-const lightbox = document.getElementById('lightbox');
-const lightboxImg = document.getElementById('lightbox-image');
-const closeBtn = document.querySelector('.close-btn');
-const loader = document.querySelector('.lightbox-loader');
 
-document.querySelectorAll('.gallery-image').forEach(img => {
-  img.addEventListener('click', function() {
-    const fullImageUrl = this.dataset.full;
-    
-    // Show loading state
-    lightbox.classList.add('active', 'loading');
-    lightbox.classList.remove('loaded');
-    
-    // Preload image
-    const tempImg = new Image();
-    tempImg.src = fullImageUrl;
-    
-    tempImg.onload = () => {
-      lightboxImg.src = fullImageUrl;
-      lightbox.classList.remove('loading');
-      lightbox.classList.add('loaded');
-    };
-    
-    tempImg.onerror = () => {
-      lightbox.classList.remove('loading');
-      alert('Failed to load image');
-      lightbox.classList.remove('active');
-    };
-  });
-});
 
-// Close lightbox
-closeBtn.addEventListener('click', () => {
-  lightbox.classList.remove('active', 'loaded');
-});
 
-// Close when clicking outside image
-lightbox.addEventListener('click', (e) => {
-  if (e.target === lightbox) {
-    lightbox.classList.remove('active', 'loaded');
-  }
-});
-
-// Close with ESC key
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape' && lightbox.classList.contains('active')) {
-    lightbox.classList.remove('active', 'loaded');
-  }
-});
 
