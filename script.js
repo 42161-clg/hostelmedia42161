@@ -41,3 +41,22 @@ function resetView() {
   const allSubfolders = document.querySelectorAll(".subfolder");
   allSubfolders.forEach(folder => folder.style.display = "none");
 }
+// scroll to top on page load
+document.querySelectorAll('.media-item iframe').forEach(iframe => {
+  iframe.setAttribute('data-clicked', 'false');
+  iframe.style.pointerEvents = 'none';
+
+  iframe.addEventListener('touchstart', function () {
+    if (iframe.getAttribute('data-clicked') === 'false') {
+      iframe.setAttribute('data-clicked', 'true');
+      iframe.style.pointerEvents = 'auto';
+
+      // Reset after 5 seconds
+      setTimeout(() => {
+        iframe.setAttribute('data-clicked', 'false');
+        iframe.style.pointerEvents = 'none';
+      }, 5000);
+    }
+  });
+});
+
