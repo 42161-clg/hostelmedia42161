@@ -40,6 +40,7 @@ body {
   .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  
   gap: 16px;
   margin-top: 20px;
 }
@@ -77,6 +78,22 @@ body {
   gap: 20px;
   justify-content: center; /* ✅ THIS CENTERS THE BUTTONS */
 }
+.nested-folder {
+  display: none; /* hidden by default */
+  
+  grid-template-columns: repeat(6, 1fr); /* 6 videos per row */
+  gap: 16px;
+  justify-content: center;
+}
+
+@media (max-width: 600px) {
+  .nested-folder {
+    grid-template-columns: 1fr; /* 1 per row on mobile */
+  }
+}
+
+
+
 
 
 .folders button {
