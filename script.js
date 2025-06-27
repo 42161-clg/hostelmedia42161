@@ -96,4 +96,41 @@ allNestedFolders.forEach(folder => folder.style.display = "none");
 //   });
 // }
 //);
+// Lightbox functionality
+document.addEventListener('DOMContentLoaded', function() {
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-image');
+  const closeBtn = document.querySelector('.close-btn');
+  
+  // Attach click events to all gallery images
+  document.querySelectorAll('.gallery-image').forEach(img => {
+    img.addEventListener('click', function() {
+      lightboxImg.src = this.dataset.full;
+      lightbox.style.display = 'block';
+      document.body.style.overflow = 'hidden'; // Prevent scrolling
+    });
+  });
+  
+  // Close lightbox
+  closeBtn.addEventListener('click', function() {
+    lightbox.style.display = 'none';
+    document.body.style.overflow = 'auto';
+  });
+  
+  // Close when clicking outside image
+  lightbox.addEventListener('click', function(e) {
+    if (e.target === lightbox) {
+      lightbox.style.display = 'none';
+      document.body.style.overflow = 'auto';
+    }
+  });
+  
+  // Close with ESC key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && lightbox.style.display === 'block') {
+      lightbox.style.display = 'none';
+      document.body.style.overflow = 'auto';
+    }
+  });
+});
 
