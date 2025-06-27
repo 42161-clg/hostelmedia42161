@@ -29,16 +29,31 @@ function showSubfolder(folderId, parent) {
   const subfolders = document.querySelectorAll(`#${parent} .subfolder`);
   subfolders.forEach(folder => folder.style.display = "none");
 
+  // Also hide any open nested folders inside subfolders
+  
+
   const target = document.getElementById(folderId);
   if (target) target.style.display = "grid";
 }
 // FUNCTION TO SHOW NESTED FOLDERS
+// function showNestedFolder(folderId) {
+//   const nested = document.querySelectorAll('.nested-folder');
+//   nested.forEach(f => f.style.display = 'none');
+
+
+//   const target = document.getElementById(folderId);
+//   if (target) target.style.display = 'grid';
+// }
 function showNestedFolder(folderId) {
+  // Hide all nested folders first
   const nested = document.querySelectorAll('.nested-folder');
   nested.forEach(f => f.style.display = 'none');
 
+  // Show the selected folder using grid (not block)
   const target = document.getElementById(folderId);
-  if (target) target.style.display = 'grid';
+  if (target) {
+    target.style.display = 'grid';
+  }
 }
 
 
@@ -49,23 +64,28 @@ function resetView() {
 
   const allSubfolders = document.querySelectorAll(".subfolder");
   allSubfolders.forEach(folder => folder.style.display = "none");
+
+  const allNestedFolders = document.querySelectorAll(".nested-folder");
+allNestedFolders.forEach(folder => folder.style.display = "none");
+
 }
 // scroll to top on page load
-document.querySelectorAll('.media-item iframe').forEach(iframe => {
-  iframe.setAttribute('data-clicked', 'false');
-  iframe.style.pointerEvents = 'none';
+// document.querySelectorAll('.media-item iframe').forEach(iframe => {
+//   iframe.setAttribute('data-clicked', 'false');
+//   iframe.style.pointerEvents = 'none';
 
-  iframe.addEventListener('touchstart', function () {
-    if (iframe.getAttribute('data-clicked') === 'false') {
-      iframe.setAttribute('data-clicked', 'true');
-      iframe.style.pointerEvents = 'auto';
+//   iframe.addEventListener('touchstart', function () {
+//     if (iframe.getAttribute('data-clicked') === 'false') {
+//       iframe.setAttribute('data-clicked', 'true');
+//       iframe.style.pointerEvents = 'auto';
 
-      // Reset after 5 seconds
-      setTimeout(() => {
-        iframe.setAttribute('data-clicked', 'false');
-        iframe.style.pointerEvents = 'none';
-      }, 5000);
-    }
-  });
-});
+//       // Reset after 5 seconds
+//       setTimeout(() => {
+//         iframe.setAttribute('data-clicked', 'false');
+//         iframe.style.pointerEvents = 'none';
+//       }, 5000);
+//     }
+//   });
+// }
+//);
 
