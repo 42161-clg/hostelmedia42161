@@ -29,36 +29,32 @@ function showSubfolder(folderId, parent) {
   const subfolders = document.querySelectorAll(`#${parent} .subfolder`);
   subfolders.forEach(folder => folder.style.display = "none");
 
-  // Also hide any open nested folders inside subfolders
-  
+ 
 
   const target = document.getElementById(folderId);
   if (target) target.style.display = "grid";
 }
 // //FUNCTION TO SHOW NESTED FOLDERS
-// function showNestedFolder(folderId) {
-//  const nested = document.querySelectorAll('.nested-folder');
-//   nested.forEach(f => f.style.display = 'none');
 
-
-//   const target = document.getElementById(folderId);
-//   if (target) target.style.display = 'grid';
-//  }
-// Update the showNestedFolder function
 function showNestedFolder(folderId) {
   // Hide all nested folders first
   const nested = document.querySelectorAll('.nested-folder');
   nested.forEach(f => f.style.display = 'none');
-  
+
+  // Also hide nested-nested folders
+  const nestedNested = document.querySelectorAll('.nested-nested-folder');
+  nestedNested.forEach(f => f.style.display = 'none');
+
   // Show the selected folder
   const target = document.getElementById(folderId);
   if (target) {
-    target.style.display = 'grid';
+    target.style.display = 'grid';  // Changed from 'block' to 'grid'
     
     // Scroll to the folder content
     target.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   }
 }
+
 
 
 
@@ -77,25 +73,6 @@ allNestedFolders.forEach(folder => folder.style.display = "none");
   window.scrollTo(0, 0);
 
 }
-// scroll to top on page load
-// document.querySelectorAll('.media-item iframe').forEach(iframe => {
-//   iframe.setAttribute('data-clicked', 'false');
-//   iframe.style.pointerEvents = 'none';
-
-//   iframe.addEventListener('touchstart', function () {
-//     if (iframe.getAttribute('data-clicked') === 'false') {
-//       iframe.setAttribute('data-clicked', 'true');
-//       iframe.style.pointerEvents = 'auto';
-
-//       // Reset after 5 seconds
-//       setTimeout(() => {
-//         iframe.setAttribute('data-clicked', 'false');
-//         iframe.style.pointerEvents = 'none';
-//       }, 5000);
-//     }
-//   });
-// }
-//);
 
 
 
