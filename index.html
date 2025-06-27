@@ -33,8 +33,7 @@
       <div class="subfolders">
         <button onclick="showSubfolder('image-folder-1', 'images')">📁 GENERAL</button>
         <button onclick="showSubfolder('image-folder-2', 'images')">📁 HBD</button>
-        <button onclick="showSubfolder('image-folder-3', 'images')">📁 GRILL</button>
-        <button onclick="showSubfolder('image-folder-4', 'images')">📁 OTHERS</button>
+        <button onclick="showSubfolder('image-folder-3', 'images')">📁 OTHERS</button>
       </div>
 
       <!-- GENDRAL Images -->
@@ -1095,8 +1094,18 @@
           <div class="media-item"><img src="https://drive.google.com/thumbnail?id=1STOBXzo0RZQyJFCjyp8e67XDc8Dxsa2u&sz=w1000" alt="Image preview" class="gallery-image"><a href="https://drive.google.com/uc?export=download&id=1STOBXzo0RZQyJFCjyp8e67XDc8Dxsa2u" download>Download</a></div>
       </div>
 
-      <!-- Events Images -->
-      <div id="image-folder-3" class="gallery subfolder" style="display: none;">
+    
+      <!-- OTHERS Images -->
+      <div id="image-folder-3" class="subfolder" style="display: none;">
+        <div class="subfolders">
+          <button onclick="showNestedFolder('GRILL')">📁 GRILL</button>
+          <button onclick="showNestedFolder('26-DEC-23')">📁 26 DEC 23</button>
+          <button onclick="showNestedFolder('17TH-OCT-24')">📁 17TH OCT 24</button>
+          
+          
+        </div>
+        <div id="GRILL" class="gallery nested-folder" style="display: none;">
+
                  
                 <div class="media-item">
                 <img src="https://drive.google.com/thumbnail?id=1ZKqpCYNSQXtmsIC5G28K2nBMaicD56uy&sz=w1000" 
@@ -1239,14 +1248,8 @@
               </div>
 
 
-      </div>
-      <!-- OTHERS Images -->
-      <div id="image-folder-4" class="subfolder" style="display: none;">
-        <div class="subfolders">
-          <button onclick="showNestedFolder('17TH-OCT-24')">📁 17TH OCT 24</button>
-          <button onclick="showNestedFolder('26-DEC-23')">📁 26 DEC 23</button>
+      
         </div>
-
         <!-- 17TH OCT 24Images -->
         <div id="17TH-OCT-24" class="gallery nested-folder" style="display: none;">
           <div class="media-item"><img src="https://drive.google.com/thumbnail?id=17y70wuCk7qWmg5h_NYJ3MG0GloI_Y5_1&sz=w1000" alt="Image preview" class="gallery-image"><a href="https://drive.google.com/uc?export=download&id=17y70wuCk7qWmg5h_NYJ3MG0GloI_Y5_1" download>Download</a></div>
@@ -1588,8 +1591,8 @@
       <!-- Subfolders for Videos -->
       <div class="subfolders">
         <button onclick="showSubfolder('video-folder-1', 'videos')">📁 GENDRAL</button>
-        <button onclick="showSubfolder('video-folder-2', 'videos')">📁 GRILL </button>
-        <button onclick="showSubfolder('video-folder-3', 'videos')">📁 Playtime</button>
+        <button onclick="showSubfolder('video-folder-2', 'videos')">📁 HBD </button>
+        <button onclick="showSubfolder('video-folder-3', 'videos')">📁 OTHERS</button>
       </div>
 
       <!-- GENDRAL Videos -->
@@ -1597,17 +1600,27 @@
         <!-- Add more video items -->
       </div>
      
+      <!-- HBD Videos -->
+      <div id="video-folder-2" class="gallery subfolder" style="display: none;">
+        <!-- Add more video items -->
+      </div>
 
-      <!-- Travel Vlogs -->
-      <div id="video-folder-2" class="subfolder" style="display: none;">
+      <!-- OTHERS Vlogs -->
+      <div id="video-folder-3" class="subfolder" style="display: none;">
         <div class="subfolders">
-          <button onclick="showNestedFolder('GRILL-25TH-FEB')">📁 GRILL 25TH FEB</button>
-          <button onclick="showNestedFolder('GRILL-28TH-JUNE')">📁 GRILL 28TH JUNE</button>
+          <button onclick="showNestedFolder('GRILL-25')">📁 GRILL 25 </button>
+          <button onclick="showNestedFolder('GRILL-28')">📁 GRILL 28 </button>
+          <button onclick="showNestedFolder('PLAY-TIME')">📁 PLAYTIME</button>
         </div>
 
-        <!-- GRILL 25TH FEB -->
-        <div id="GRILL-25TH-FEB" class="gallery nested-folder" style="display: none;">
-          <div class="media-item">
+        <!-- GRILL -->
+            <div id="GRILL-25" class="gallery nested-folder" style="display: none;">
+
+              <!-- GRILL 25 -->
+             
+                <!-- Add videos for GRILL 25 -->
+                
+              <div class="media-item">
                 <iframe src="https://drive.google.com/file/d/1nvSFyJXmubBC09DueF_PCCSfktfkFVe8/preview" width="100%" height="300" frameborder="0" allowfullscreen></iframe>
                 <a href="https://drive.google.com/uc?export=download&id=1nvSFyJXmubBC09DueF_PCCSfktfkFVe8" download>Download</a>
               </div>
@@ -1667,11 +1680,12 @@
                 <a href="https://drive.google.com/uc?export=download&id=1g0iHWLm8n0fJH9JAWVCvZFheiHaiKEbO" download>Download</a>
               </div>
 
-        </div>
-
-        <!-- GRILL 28TH JUNE -->
-        <div id="GRILL-28TH-JUNE" class="gallery nested-folder" style="display: none;">
-        <div class="media-item">
+              </div>
+              <!-- GRILL 28 -->
+              <div id="GRILL-28" class="gallery nested-folder" style="display: none;">
+                <!-- Add videos for GRILL 28 -->
+                
+            <div class="media-item">
               <iframe src="https://drive.google.com/file/d/1d5e5vUiTrk7tH_yzdy09Qttg1AFq3dzh/preview" width="100%" height="300" frameborder="0" allowfullscreen></iframe>
               <a href="https://drive.google.com/uc?export=download&id=1d5e5vUiTrk7tH_yzdy09Qttg1AFq3dzh" download>Download</a>
             </div>
@@ -1854,12 +1868,12 @@
                   <iframe src="https://drive.google.com/file/d/10d6e2FCl9-bG_bZ797wSDeDgAiA7oU4U/preview" width="100%" height="300" frameborder="0" allowfullscreen></iframe>
                   <a href="https://drive.google.com/uc?export=download&id=10d6e2FCl9-bG_bZ797wSDeDgAiA7oU4U" download>Download</a>
                 </div>
-        </div>
-      </div>
-
-      
-       <!-- playtime Videos -->
-      <div id="video-folder-3" class="gallery subfolder" style="display: none;">
+        
+              </div>
+            
+                      <!-- PLAY TIME -->
+              <div id="PLAY-TIME" class="gallery nested-folder" style="display: none;">
+                <!-- Add videos for PLAY TIME -->
         
                   <div class="media-item">
             <iframe src="https://drive.google.com/file/d/1Ylm_2JsZpqs-wiTzDLnUtxj-yR1fWD3X/preview" width="100%" height="300" frameborder="0" allowfullscreen allow="autoplay"></iframe>
@@ -2040,7 +2054,10 @@
                   <a href="https://drive.google.com/uc?export=download&id=1UhTeTExffC7YqETiLnqPwu6gCQI-r-O3" download>Download</a>
                 </div>
 
-      </div>
+              </div>    
+        
+            </div>
+      
 
       </div>
        
