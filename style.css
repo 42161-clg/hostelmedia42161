@@ -124,7 +124,15 @@ body {
 
 .media-item img {
   width: 100%;
+  height: 150px;
+  object-fit: cover;
   border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.media-item img:hover {
+  transform: scale(1.05);
 }
 #images .gallery {
   display: grid;
@@ -174,4 +182,35 @@ body {
   .media-item iframe {
     height: 180px;
   }
+}
+
+/* Lightbox Styles */
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  text-align: center;
+}
+
+.lightbox-img {
+  max-width: 90%;
+  max-height: 90%;
+  margin-top: 5vh;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: white;
+  font-size: 40px;
+  cursor: pointer;
+  text-shadow: 0 0 10px rgba(0,0,0,0.7);
 }
