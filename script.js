@@ -32,6 +32,15 @@ function showSubfolder(folderId, parent) {
   const target = document.getElementById(folderId);
   if (target) target.style.display = "grid";
 }
+// FUNCTION TO SHOW NESTED FOLDERS
+function showNestedFolder(folderId) {
+  const nested = document.querySelectorAll('.nested-folder');
+  nested.forEach(f => f.style.display = 'none');
+
+  const target = document.getElementById(folderId);
+  if (target) target.style.display = 'grid';
+}
+
 
 // Hide everything on Media Gallery title click
 function resetView() {
