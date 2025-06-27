@@ -97,40 +97,53 @@ allNestedFolders.forEach(folder => folder.style.display = "none");
 // }
 //);
 // Lightbox functionality
-document.addEventListener('DOMContentLoaded', function() {
-  const lightbox = document.getElementById('lightbox');
-  const lightboxImg = document.getElementById('lightbox-image');
-  const closeBtn = document.querySelector('.close-btn');
-  
-  // Attach click events to all gallery images
-  document.querySelectorAll('.gallery-image').forEach(img => {
-    img.addEventListener('click', function() {
-      lightboxImg.src = this.dataset.full;
-      lightbox.style.display = 'block';
-      document.body.style.overflow = 'hidden'; // Prevent scrolling
-    });
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-image');
+const closeBtn = document.querySelector('.close-btn');
+const loader = document.querySelector('.lightbox-loader');
+
+document.querySelectorAll('.gallery-image').forEach(img => {
+  img.addEventListener('click', function() {
+    const fullImageUrl = this.dataset.full;
+    
+    // Show loading state
+    lightbox.classList.add('active', 'loading');
+    lightbox.classList.remove('loaded');
+    
+    // Preload image
+    const tempImg = new Image();
+    tempImg.src = fullImageUrl;
+    
+    tempImg.onload = () => {
+      lightboxImg.src = fullImageUrl;
+      lightbox.classList.remove('loading');
+      lightbox.classList.add('loaded');
+    };
+    
+    tempImg.onerror = () => {
+      lightbox.classList.remove('loading');
+      alert('Failed to load image');
+      lightbox.classList.remove('active');
+    };
   });
-  
-  // Close lightbox
-  closeBtn.addEventListener('click', function() {
-    lightbox.style.display = 'none';
-    document.body.style.overflow = 'auto';
-  });
-  
-  // Close when clicking outside image
-  lightbox.addEventListener('click', function(e) {
-    if (e.target === lightbox) {
-      lightbox.style.display = 'none';
-      document.body.style.overflow = 'auto';
-    }
-  });
-  
-  // Close with ESC key
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape' && lightbox.style.display === 'block') {
-      lightbox.style.display = 'none';
-      document.body.style.overflow = 'auto';
-    }
-  });
+});
+
+// Close lightbox
+closeBtn.addEventListener('click', () => {
+  lightbox.classList.remove('active', 'loaded');
+});
+
+// Close when clicking outside image
+lightbox.addEventListener('click', (e) => {
+  if (e.target === lightbox) {
+    lightbox.classList.remove('active', 'loaded');
+  }
+});
+
+// Close with ESC key
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+    lightbox.classList.remove('active', 'loaded');
+  }
 });
 
