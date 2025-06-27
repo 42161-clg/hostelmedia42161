@@ -45,24 +45,25 @@ body {
   margin-top: 20px;
 }
   
-  .media-item {
+.media-item {
   background: #222;
   padding: 10px;
   border-radius: 10px;
   text-align: center;
   overflow: hidden;
-}
+} 
+
   
-  .media-item iframe {
+ .media-item iframe {
      width: 100%;
   border-radius: 8px;
   height: auto;
-  }
+  } 
+  
   
   .media-item a {
     display: block;
     margin-top: 10px;
-    color: #00f;
     text-decoration: underline;
   }
   .folders {
@@ -78,12 +79,18 @@ body {
   gap: 20px;
   justify-content: center; /* ✅ THIS CENTERS THE BUTTONS */
 }
-.nested-folder {
-  display: none; /* hidden by default */
+/* .nested-folder {
+  display: none;
   
-  grid-template-columns: repeat(6, 1fr); /* 6 videos per row */
+  grid-template-columns: repeat(6, 1fr); 
   gap: 16px;
   justify-content: center;
+}  */
+.nested-folder {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-top: 20px;
 }
 
 @media (max-width: 600px) {
@@ -137,5 +144,34 @@ body {
 
   #videos .gallery {
     grid-template-columns: 1fr; /* 1 video per row */
+  }
+}
+
+
+
+/* Better mobile layout */
+@media (max-width: 768px) {
+  #images .gallery,
+  #videos .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .subfolders {
+    flex-wrap: wrap;
+  }
+  
+  .media-item iframe {
+    height: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  #images .gallery,
+  #videos .gallery {
+    grid-template-columns: 1fr;
+  }
+  
+  .media-item iframe {
+    height: 180px;
   }
 }
