@@ -35,26 +35,31 @@ function showSubfolder(folderId, parent) {
   const target = document.getElementById(folderId);
   if (target) target.style.display = "grid";
 }
-// FUNCTION TO SHOW NESTED FOLDERS
+// //FUNCTION TO SHOW NESTED FOLDERS
 // function showNestedFolder(folderId) {
-//   const nested = document.querySelectorAll('.nested-folder');
+//  const nested = document.querySelectorAll('.nested-folder');
 //   nested.forEach(f => f.style.display = 'none');
 
 
 //   const target = document.getElementById(folderId);
 //   if (target) target.style.display = 'grid';
-// }
+//  }
+// Update the showNestedFolder function
 function showNestedFolder(folderId) {
   // Hide all nested folders first
   const nested = document.querySelectorAll('.nested-folder');
   nested.forEach(f => f.style.display = 'none');
-
-  // Show the selected folder using grid (not block)
+  
+  // Show the selected folder
   const target = document.getElementById(folderId);
   if (target) {
     target.style.display = 'grid';
+    
+    // Scroll to the folder content
+    target.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   }
 }
+
 
 
 // Hide everything on Media Gallery title click
@@ -67,6 +72,9 @@ function resetView() {
 
   const allNestedFolders = document.querySelectorAll(".nested-folder");
 allNestedFolders.forEach(folder => folder.style.display = "none");
+
+  // Scroll to top
+  window.scrollTo(0, 0);
 
 }
 // scroll to top on page load
