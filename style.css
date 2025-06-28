@@ -161,3 +161,93 @@ button:hover {
   text-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
 
+/* ===== Existing styles ===== */
+/* ... your existing styles ... */
+
+/* ===== Mobile Optimizations ===== */
+/* Gallery Grid Adjustments */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 16px;
+}
+
+/* Images Grid */
+#images .gallery-grid {
+  grid-template-columns: repeat(6, 1fr); /* 6 columns on desktop */
+}
+
+/* Videos Grid */
+#videos .gallery-grid {
+  grid-template-columns: repeat(6, 1fr); /* 6 columns on desktop */
+}
+
+/* Video Thumbnail Play Button */
+.video-thumb {
+  position: relative;
+}
+
+.video-thumb::after {
+  content: "▶";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 40px;
+  color: white;
+  text-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+/* ===== Media Queries ===== */
+/* Tablets and Small Screens */
+@media (max-width: 768px) {
+  #images .gallery-grid,
+  #videos .gallery-grid {
+    grid-template-columns: repeat(3, 1fr); /* 3 items per row */
+  }
+  
+  .media-item iframe {
+    height: 200px; /* Adjusted iframe height */
+  }
+}
+
+/* Mobile Phones */
+@media (max-width: 480px) {
+  #images .gallery-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 images per row */
+  }
+  
+  #videos .gallery-grid {
+    grid-template-columns: 1fr; /* 1 video per row */
+  }
+  
+  .folders, 
+  .subfolders {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .media-item iframe {
+    height: 180px; /* Slightly taller on mobile */
+  }
+  
+  button {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 5px;
+  }
+}
+
+/* Very Small Phones */
+@media (max-width: 360px) {
+  #images .gallery-grid {
+    grid-template-columns: 1fr; /* 1 image per row */
+  }
+  
+  .media-item img,
+  .media-item iframe {
+    height: 150px;
+  }
+}
+
