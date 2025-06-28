@@ -1,16 +1,35 @@
 // Access code
-const SECRET_CODE = "1234"; // Change this to your preferred code
+// const SECRET_CODE = "1234"; 
 
+// function checkAccess() {
+//   const input = document.getElementById("access-code").value;
+//   const errorMsg = document.getElementById("error-msg");
+//   if (input === SECRET_CODE) {
+//     document.getElementById("login-section").style.display = "none";
+//     document.getElementById("gallery-section").style.display = "block";
+//   } else {
+//     errorMsg.innerText = "Incorrect access code!";
+//   }
+// }
+// Access code with allowed names
+const ALLOWED_NAMES = [
+  "abikarthick", "arun", "vijay", "karthick", "gokul",
+  "manoj", "sathish", "keerthi", "swetha", "raj",
+  "vimal", "deepak", "naveen", "santhosh", "kavin",
+  "harish", "bharath", "dinesh", "surya", "nithya"
+];
 function checkAccess() {
-  const input = document.getElementById("access-code").value;
+  const input = document.getElementById("access-code").value.trim().toLowerCase();
   const errorMsg = document.getElementById("error-msg");
-  if (input === SECRET_CODE) {
+
+  if (ALLOWED_NAMES.includes(input)) {
     document.getElementById("login-section").style.display = "none";
     document.getElementById("gallery-section").style.display = "block";
   } else {
-    errorMsg.innerText = "Incorrect access code!";
+    errorMsg.innerText = "Incorrect access name!";
   }
 }
+
 
 // Show top-level folder (images or videos)
 function showFolder(folderId) {
