@@ -13,10 +13,10 @@
 // }
 // Access code with allowed names
 const ALLOWED_NAMES = [
-  "abikarthick", "arun", "vijay", "karthick", "gokul",
-  "manoj", "sathish", "keerthi", "swetha", "raj",
+  "abikarthick", "mukilan", "v1", "karthick", "uruttu",
+  "sa", "sathish", "keerthi", "swetha", "raj",
   "vimal", "deepak", "naveen", "santhosh", "kavin",
-  "harish", "bharath", "dinesh", "surya", "nithya"
+  
 ];
 function checkAccess() {
   const input = document.getElementById("access-code").value.trim().toLowerCase();
