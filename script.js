@@ -7,7 +7,7 @@ const accessCodeInput = document.getElementById('access-code');
 const errorMsg = document.getElementById('error-msg');
 
 // Access code
-const SECRET_CODE = "1"; 
+const SECRET_CODE = "mechostel@2021"; 
 
 // Event listeners
 loginBtn.addEventListener('click', checkAccess);
