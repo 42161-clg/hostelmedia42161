@@ -160,75 +160,7 @@ button:hover {
   color: white;
   text-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
-/* ===== Mobile Navigation Optimization ===== */
-.folders, .subfolders {
-  display: flex;
-  flex-wrap: nowrap; /* Change from wrap to nowrap */
-  justify-content: flex-start; /* Align to start instead of center */
-  gap: 12px;
-  margin: 20px auto;
-  max-width: 100%;
-  overflow-x: auto; /* Add horizontal scrolling */
-  padding-bottom: 5px; /* Space for scrollbar */
-  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
-}
 
-/* Top-level folders */
-.folders {
-  padding-bottom: 5px;
-}
-
-/* Buttons */
-.folders button, 
-.subfolders button {
-  flex: 0 0 auto; /* Prevent buttons from shrinking */
-  padding: 10px 15px;
-  font-size: 14px;
-  white-space: nowrap; /* Keep button text on one line */
-}
-
-/* ===== Media Queries for Navigation ===== */
-/* Tablets and Small Screens */
-@media (max-width: 768px) {
-  .folders, .subfolders {
-    padding: 0 10px 10px;
-  }
-  
-  .folders button, 
-.subfolders button {
-    padding: 8px 12px;
-    font-size: 13px;
-  }
-}
-
-/* Mobile Phones */
-@media (max-width: 480px) {
-  .folders, .subfolders {
-    gap: 8px;
-  }
-  
-  .folders button, 
-.subfolders button {
-    padding: 6px 10px;
-    font-size: 12px;
-  }
-}
-
-/* Very Small Phones */
-@media (max-width: 360px) {
-  .folders, .subfolders {
-    gap: 6px;
-  }
-  
-  .folders button, 
-.subfolders button {
-    padding: 5px 8px;
-    font-size: 11px;
-  }
-}
-
-/* ===== Gallery Grid Adjustments ===== */
-/* Keep existing gallery grid styles */
 
 /* ===== Existing styles ===== */
 /* ... your existing styles ... */
@@ -320,3 +252,4 @@ button:hover {
     height: 150px;
   }
 }
+
